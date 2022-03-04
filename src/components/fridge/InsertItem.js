@@ -84,46 +84,45 @@ export default function InsertItem(props) {
   };
 
   return (
-      <form className='flex flex-wrap form-inputs items' onSubmit={onSaveItem}>
-          <div className='w-1/3 w-full px-3 '>
-            <label className='mb-2 input-label'>🍉 Item Name</label>
-            <input
-              required
-              className='w-full px-4 py-3 mb-3 leading-tight appearance-none input-field focus:outline-none focus:bg-white'
-              type='text'
-              autoFocus
-              name='itemName'
-              value={itemName}
-              onChange={(v) => setItemName(v.target.value)}
-            />
-          </div>
-          <div className='w-1/3 w-full px-3'>
-            <label className='mb-2 input-label'>⏰ Expiry Date</label>
-            <DatePicker
-              required
-              className='w-full px-4 py-3 mb-3 leading-tight appearance-none input-field focus:outline-none focus:bg-white'
-              selected={expDate}
-              onChange={(date) => setExpDate(date)}
-            />
-          </div>
+    <form className='flex flex-wrap form-inputs items' onSubmit={onSaveItem}>
+      <div className='w-1/3 w-full px-3 '>
+        <label className='mb-2 input-label'>🍉 Item Name</label>
+        <input
+          required
+          className='w-full px-4 py-3 mb-3 leading-tight appearance-none input-field focus:outline-none focus:bg-white'
+          type='text'
+          autoFocus
+          name='itemName'
+          value={itemName}
+          onChange={(v) => setItemName(v.target.value)}
+        />
+      </div>
+      <div className='w-1/3 w-full px-3'>
+        <label className='mb-2 input-label'>⏰ Expiry Date</label>
+        <DatePicker
+          required
+          className='w-full px-4 py-3 mb-3 leading-tight appearance-none input-field focus:outline-none focus:bg-white'
+          selected={expDate}
+          onChange={(date) => setExpDate(date)}
+        />
+      </div>
 
-          <div className='w-1/3 w-full px-3'>
-            <button
-              disabled={loading}
-              className='w-auto mt-6 text-sm font-semibold uppercase rounded submit-button'
-              type='submit'
-            >
-              {loading ? 'Wait...' : '  Add to Fridge'}
-            </button>
-          </div>
-          <div className='text-xs italic text-gray-500 warning-message'>
-            {isItemExists && (
-              <p className='ml-1'>
-                ⚠️ We Don't Want More Than One Piece Of The Same Food In Our
-                Fridge
-              </p>
-            )}
-          </div>
-      </form>
+      <div className='w-1/3 w-full px-3'>
+        <button
+          disabled={loading}
+          className='w-auto mt-6 text-sm font-semibold uppercase rounded submit-button'
+          type='submit'
+        >
+          {loading ? 'Wait...' : '  Add to Fridge'}
+        </button>
+      </div>
+      <div className='text-xs italic text-gray-500 warning-message'>
+        {isItemExists && (
+          <p className='ml-1'>
+            ⚠️ We Don't Want More Than One Piece Of The Same Food In Our Fridge
+          </p>
+        )}
+      </div>
+    </form>
   );
 }

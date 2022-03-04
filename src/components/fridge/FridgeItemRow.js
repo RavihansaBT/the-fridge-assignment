@@ -13,7 +13,6 @@ export default function FridgeItemRow(props) {
     itemId,
     setOpenConfirmation,
     openConfirmation,
-    //
     setExpDate,
     setItemName,
     setEditItem,
